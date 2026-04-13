@@ -1,0 +1,138 @@
+/* Strong centering + star icon patch */
+html, body { overflow-x: hidden; }
+
+.hero-center {
+  max-width: 900px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-inline: 1rem;
+}
+
+.hero-title,
+.hero-subtitle,
+.section-title,
+.section-copy,
+.flight-route-big,
+.flight-date,
+.brand-title,
+.brand-subtitle,
+.summary-title,
+.ticket-route,
+.ticket-value,
+.notice-box,
+.table td,
+.table th,
+.auth-links a,
+.user-pill,
+.mode-toggle {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.hero-title { line-height: 1.08 !important; }
+.hero-subtitle,
+.section-copy,
+.brand-subtitle { line-height: 1.5 !important; }
+
+.search-shell {
+  max-width: 1080px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.flight-card-row {
+  justify-content: center !important;
+}
+
+.flight-card-col {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.flight-card-col .flight-preview-card {
+  width: 100% !important;
+  max-width: 335px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.promo-grid {
+  justify-items: center !important;
+}
+
+.promo-card,
+.metric-card,
+.form-shell,
+.table-shell,
+.summary-card,
+.booking-seat-wrap,
+.auth-card,
+.ticket-shell {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.inline-actions,
+.center-actions,
+.ticket-actions,
+.auth-links,
+.footer-row,
+.seat-map-header,
+.summary-list li,
+.ticket-top .d-flex {
+  flex-wrap: wrap;
+}
+
+.inline-actions,
+.center-actions,
+.ticket-actions,
+.footer-row {
+  justify-content: center !important;
+}
+
+.hero-plane,
+.mini-plane {
+  font-size: inherit !important;
+  color: var(--air-rose, #cb6e93) !important;
+}
+
+.hero-plane {
+  font-size: 2.05rem !important;
+  text-shadow: 0 0 18px rgba(234, 157, 186, 0.35);
+}
+
+.mini-plane {
+  font-size: 1.05rem !important;
+  color: var(--air-pink-strong, #ea9dba) !important;
+}
+
+.hero-visuals {
+  min-height: 90px;
+}
+
+.results-section .container-xl,
+.hero-booking .container-xl,
+.booking-page .container-xl,
+.auth-page .container-xl,
+.admin-shell {
+  width: min(100%, 1140px) !important;
+}
+
+@media (max-width: 991px) {
+  .hero-plane,
+  .cloud {
+    display: none !important;
+  }
+
+  .promo-grid,
+  .ticket-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-title { font-size: clamp(1.9rem, 7vw, 2.6rem) !important; }
+  .section-title { font-size: 1.45rem !important; }
+  .flight-route-big { font-size: 1.22rem !important; }
+  .ticket-route { font-size: 1.35rem !important; }
+}

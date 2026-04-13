@@ -1,0 +1,363 @@
+/* Premium + First Class search card and strong centering patch */
+html, body { overflow-x: hidden; }
+
+.hero-center,
+.section-header,
+.search-shell,
+.auth-card,
+.summary-card,
+.form-shell,
+.table-shell,
+.metric-card,
+.ticket-shell,
+.booking-seat-wrap,
+.flight-preview-card,
+.promo-card {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.hero-center {
+  max-width: 900px !important;
+  padding-inline: 1rem;
+}
+
+.search-shell {
+  max-width: 1320px !important;
+  border-radius: 34px !important;
+  padding: 1.15rem 1.25rem !important;
+}
+
+.search-shell .search-top-bar {
+  display: grid;
+  grid-template-columns: 1.2fr 1.2fr 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.search-shell .search-bottom-bar {
+  display: grid;
+  grid-template-columns: 1.2fr 70px 1.2fr 1.6fr auto;
+  gap: .9rem;
+  align-items: center;
+}
+
+.search-pill,
+.search-box-card,
+.date-box-card,
+.promo-box {
+  background: rgba(255,255,255,.82);
+  border: 1px solid var(--air-line, #eed3df);
+  border-radius: 22px;
+  min-height: 62px;
+  display: flex;
+  align-items: center;
+  padding: .9rem 1rem;
+}
+
+body.dark-mode .search-pill,
+body.dark-mode .search-box-card,
+body.dark-mode .date-box-card,
+body.dark-mode .promo-box {
+  background: rgba(255,255,255,.05);
+  border-color: rgba(255,255,255,.08);
+}
+
+.search-meta {
+  display: flex;
+  flex-direction: column;
+  gap: .12rem;
+}
+
+.search-meta .label {
+  font-size: .78rem;
+  color: var(--air-text-muted, #7e7783);
+}
+
+.search-meta .value {
+  font-size: 1.02rem;
+  font-weight: 800;
+  color: var(--air-navy, #213a6b);
+}
+
+.swap-star {
+  width: 54px;
+  height: 54px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--air-line, #eed3df);
+  background: rgba(255,255,255,.88);
+  font-size: 1.25rem;
+  color: var(--air-rose, #cb6e93);
+  margin-inline: auto;
+}
+
+body.dark-mode .swap-star {
+  background: rgba(255,255,255,.06);
+  border-color: rgba(255,255,255,.08);
+}
+
+.flight-card-row {
+  justify-content: center !important;
+  row-gap: 1.5rem;
+}
+
+.flight-card-col {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.flight-card-col .flight-preview-card {
+  width: 100% !important;
+  max-width: 335px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.flight-preview-card {
+  min-height: 100%;
+}
+
+.flight-preview-top,
+.inline-actions,
+.center-actions,
+.ticket-actions,
+.auth-links,
+.footer-row,
+.seat-map-header,
+.summary-list li,
+.ticket-top .d-flex {
+  flex-wrap: wrap;
+}
+
+.inline-actions,
+.center-actions,
+.ticket-actions,
+.footer-row {
+  justify-content: center !important;
+}
+
+.hero-plane,
+.mini-plane {
+  color: var(--air-rose, #cb6e93) !important;
+}
+
+.hero-plane {
+  font-size: 2.05rem !important;
+  text-shadow: 0 0 18px rgba(234,157,186,.35);
+}
+
+.mini-plane {
+  font-size: 1.05rem !important;
+}
+
+.hero-title,
+.hero-subtitle,
+.section-title,
+.section-copy,
+.flight-route-big,
+.flight-date,
+.brand-title,
+.brand-subtitle,
+.summary-title,
+.ticket-route,
+.ticket-value,
+.notice-box,
+.table td,
+.table th,
+.auth-links a,
+.user-pill,
+.mode-toggle,
+.search-meta .value,
+.search-meta .label {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.first-class {
+  border-color: #ffd58a !important;
+  background: #fff8ea !important;
+}
+
+.premium {
+  border-color: #c6b5ff !important;
+  background: #f5f0ff !important;
+}
+
+@media (max-width: 1199px) {
+  .search-shell .search-top-bar {
+    grid-template-columns: 1fr 1fr;
+  }
+  .search-shell .search-bottom-bar {
+    grid-template-columns: 1fr 54px 1fr;
+  }
+  .date-box-card { grid-column: 1 / -1; }
+  .search-shell .btn-air-primary.w-100 { grid-column: 1 / -1; }
+}
+
+@media (max-width: 767px) {
+  .search-shell .search-top-bar,
+  .search-shell .search-bottom-bar {
+    grid-template-columns: 1fr;
+  }
+  .swap-star {
+    order: 3;
+  }
+  .hero-plane,
+  .cloud {
+    display: none !important;
+  }
+  .hero-title { font-size: clamp(1.9rem, 7vw, 2.6rem) !important; }
+  .section-title { font-size: 1.45rem !important; }
+  .flight-route-big { font-size: 1.22rem !important; }
+
+
+/* === FINAL FLOATING CARD CENTERING FIX === */
+.floating-card,
+.flight-preview-card,
+.metric-card,
+.form-shell,
+.table-shell,
+.summary-card,
+.booking-seat-wrap,
+.auth-card,
+.ticket-shell,
+.promo-card {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;           /* Important for mobile */
+}
+
+/* Give proper max-width to different card types */
+.flight-preview-card,
+.promo-card {
+    max-width: 340px !important;
+}
+
+.metric-card,
+.form-shell,
+.summary-card,
+.booking-seat-wrap,
+.auth-card {
+    max-width: 520px !important;
+}
+
+.table-shell {
+    max-width: 100% !important;
+}
+
+/* Make sure parent containers center their children */
+.admin-shell .row,
+.results-section .row,
+.booking-page .row,
+.auth-page .row {
+    justify-content: center !important;
+}
+
+/* Extra safety for columns */
+.col-lg-4, .col-lg-5, .col-lg-7, .col-lg-8,
+.col-md-4, .col-md-6 {
+    display: flex !important;
+    justify-content: center !important;
+}
+
+/* Search Form - Mobile-First Responsive */
+.search-shell {
+    padding: 1.75rem 1.5rem !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+}
+
+.search-top-bar,
+.search-bottom-bar {
+    gap: 1rem;
+}
+
+.search-main-btn {
+    font-size: 1.15rem;
+    font-weight: 600;
+    padding: 14px 20px;
+    min-height: 54px;
+}
+
+/* Stack everything on small phones */
+@media (max-width: 576px) {
+    .search-shell {
+        padding: 1.25rem 1rem !important;
+    }
+    
+    .search-top-bar,
+    .search-bottom-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .search-pill,
+    .search-box-card,
+    .date-box-card,
+    .promo-box {
+        width: 100% !important;
+        min-width: 100% !important;
+    }
+    
+    .swap-star {
+        display: none !important;
+    }
+    
+    .date-grid-card .d-flex {
+        flex-direction: column;
+    }
+    
+    .search-main-btn {
+        font-size: 1.2rem;
+        padding: 16px;
+    }
+}
+
+/* Medium screens (tablets) */
+@media (min-width: 577px) and (max-width: 991px) {
+    .search-bottom-bar {
+        flex-wrap: wrap;
+    }
+    .date-box-card {
+        flex-basis: 100%;
+    }
+}
+
+/* Responsive Search Form Fixes */
+.search-shell {
+    padding: 1.75rem 1.5rem !important;
+    max-width: 100% !important;
+}
+
+.search-main-btn {
+    font-size: 1.15rem;
+    font-weight: 600;
+    min-height: 54px;
+}
+
+@media (max-width: 576px) {
+    .search-shell {
+        padding: 1.25rem 1rem !important;
+    }
+    
+    .search-top-bar,
+    .search-bottom-bar {
+        flex-direction: column !important;
+        align-items: stretch !important;
+    }
+    
+    .swap-star {
+        display: none !important;
+    }
+    
+    .search-main-btn {
+        font-size: 1.2rem;
+        padding: 16px 20px;
+    }
+}
+}

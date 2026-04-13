@@ -1,0 +1,298 @@
+/* Air-TRX production polish patch
+   Fixes centering, overlapping text, and swaps airplane icons to star icons.
+   Add this AFTER your main style.css in the public header and admin header.
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+img, svg, video, canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+/* --- Global centering + layout stability --- */
+.container,
+.container-xl,
+.center-header,
+.hero-center,
+.search-shell,
+.auth-card,
+.summary-card,
+.form-shell,
+.table-shell,
+.metric-card,
+.ticket-shell,
+.booking-seat-wrap,
+.flight-preview-card,
+.promo-card {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.results-section .row,
+.booking-page .row,
+.admin-shell .row,
+.auth-page .row {
+  justify-content: center;
+}
+
+.results-section .col-lg-4,
+.results-section .col-md-6,
+.booking-page .col-lg-5,
+.booking-page .col-lg-7,
+.admin-shell .col-lg-4,
+.admin-shell .col-lg-8,
+.admin-shell .col-md-4 {
+  display: flex;
+}
+
+.flight-preview-card,
+.promo-card,
+.metric-card,
+.form-shell,
+.table-shell,
+.summary-card,
+.booking-seat-wrap,
+.auth-card {
+  width: 100%;
+}
+
+.search-shell {
+  max-width: 1080px;
+}
+
+.auth-card {
+  width: min(100%, 920px);
+}
+
+.ticket-shell {
+  width: min(100%, 860px);
+}
+
+.promo-grid {
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: stretch;
+}
+
+.hero-booking .container-xl,
+.results-section .container-xl,
+.booking-page .container-xl,
+.admin-shell,
+.auth-page .container-xl {
+  width: min(100%, 1140px);
+}
+
+/* --- Prevent text overlap --- */
+.brand-title,
+.brand-subtitle,
+.hero-title,
+.hero-subtitle,
+.section-title,
+.section-copy,
+.flight-route-big,
+.ticket-route,
+.ticket-value,
+.summary-title,
+.metric-value,
+.user-pill,
+.mode-toggle,
+.notice-box,
+.auth-links a,
+.table th,
+.table td,
+.form-label,
+.selected-seat-pill {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.hero-title {
+  line-height: 1.1;
+}
+
+.hero-subtitle,
+.section-copy,
+.ticket-label,
+.brand-subtitle {
+  line-height: 1.5;
+}
+
+.inline-actions,
+.center-actions,
+.auth-links,
+.ticket-actions,
+.footer-row,
+.seat-map-header,
+.summary-list li,
+.ticket-top .d-flex {
+  flex-wrap: wrap;
+}
+
+.inline-actions,
+.center-actions,
+.ticket-actions,
+.footer-row {
+  justify-content: center;
+}
+
+.summary-list li {
+  align-items: flex-start;
+}
+
+.table-responsive {
+  width: 100%;
+}
+
+.table th,
+.table td {
+  vertical-align: top;
+}
+
+/* --- Replace airplane icons with stars --- */
+.hero-plane,
+.mini-plane {
+  font-size: 0 !important;
+  position: relative;
+}
+
+.hero-plane::before {
+  content: '★';
+  font-size: 2.1rem;
+  line-height: 1;
+  color: var(--air-rose, #cb6e93);
+  display: inline-block;
+  text-shadow: 0 0 18px rgba(234, 157, 186, 0.35);
+}
+
+.mini-plane::before {
+  content: '★';
+  font-size: 1.15rem;
+  line-height: 1;
+  color: var(--air-navy, #213a6b);
+  display: inline-block;
+}
+
+/* --- Better spacing for cards and headings --- */
+.section-header {
+  max-width: 860px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.flight-preview-card {
+  min-height: 100%;
+}
+
+.table-shell .card-body,
+.form-shell .card-body,
+.summary-card,
+.booking-seat-wrap,
+.metric-card,
+.auth-card {
+  padding: 1.25rem;
+}
+
+.notice-box {
+  padding: .9rem 1rem;
+  border: 1px solid rgba(203, 110, 147, .18);
+  border-radius: 18px;
+  background: rgba(255,255,255,.65);
+  color: var(--air-text, #344457);
+}
+
+body.dark-mode .notice-box {
+  background: rgba(255,255,255,.04);
+  border-color: rgba(255,255,255,.08);
+  color: inherit;
+}
+
+/* --- More reliable responsive behavior --- */
+@media (max-width: 991px) {
+  .promo-grid,
+  .ticket-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .hero-visuals {
+    height: auto;
+    min-height: 28px;
+  }
+
+  .hero-plane,
+  .cloud {
+    display: none !important;
+  }
+
+  .search-shell,
+  .auth-card,
+  .summary-card,
+  .form-shell,
+  .table-shell,
+  .booking-seat-wrap,
+  .metric-card,
+  .flight-preview-card,
+  .promo-card {
+    border-radius: 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-title {
+    font-size: clamp(1.9rem, 7vw, 2.6rem) !important;
+  }
+
+  .section-title {
+    font-size: 1.45rem !important;
+  }
+
+  .flight-route-big {
+    font-size: 1.22rem !important;
+  }
+
+  .ticket-route {
+    font-size: 1.35rem !important;
+  }
+
+  .seat-grid {
+    gap: .4rem;
+  }
+
+  .seat,
+  .seat-row-label,
+  .seat-aisle {
+    min-height: 36px;
+    font-size: .76rem;
+  }
+
+
+  /* Consistent Background for ALL pages - same as index.php */
+html, body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle at top right, rgba(248,201,220,.16), transparent 26%),
+                linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+    background-attachment: fixed;
+    background-size: cover;
+    color: var(--text);
+    transition: background .25s, color .25s;
+}
+
+/* Dark mode override */
+.dark-mode html,
+.dark-mode body {
+    background: radial-gradient(circle at top right, rgba(30,25,40,.12), transparent 30%),
+                linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+    background-attachment: fixed;
+}
+}

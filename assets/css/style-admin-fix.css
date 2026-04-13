@@ -1,0 +1,59 @@
+/* ====================== CARD CENTERING ====================== */
+.admin-shell .container-xl {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.admin-shell .row.g-4 {
+    justify-content: center !important;
+}
+
+.floating-card,
+.metric-card,
+.form-shell,
+.table-shell,
+.summary-card {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100% !important;
+}
+
+.metric-card { max-width: 320px !important; }
+.form-shell { max-width: 520px !important; }
+.table-shell { max-width: 100% !important; }
+
+.col-lg-4, .col-lg-8, .col-md-4 {
+    display: flex !important;
+    justify-content: center !important;
+}
+
+/* ====================== LIGHT PINK NAVBAR FIX ====================== */
+body:not(.dark-mode) .air-navbar.admin-navbar,
+body:not(.dark-mode) #adminNavbar {
+    background: linear-gradient(180deg, rgba(255,231,240,.95), rgba(255,219,234,.92)) !important;
+    border-bottom: 1px solid rgba(203,110,147,.18) !important;
+}
+
+/* Dark mode navbar */
+.dark-mode .air-navbar.admin-navbar,
+.dark-mode #adminNavbar {
+    background: linear-gradient(180deg, rgba(23,27,36,.94), rgba(19,22,30,.94)) !important;
+    border-bottom: 1px solid rgba(255,255,255,.06) !important;
+}
+
+/* Force same background on Admin pages */
+.admin-body,
+.admin-body html,
+.admin-body body {
+    background: radial-gradient(circle at top right, rgba(248,201,220,.16), transparent 26%),
+                linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%) !important;
+    background-attachment: fixed !important;
+    min-height: 100vh !important;
+}
+
+.dark-mode.admin-body,
+.dark-mode.admin-body html,
+.dark-mode.admin-body body {
+    background: radial-gradient(circle at top right, rgba(30,25,40,.12), transparent 30%),
+                linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%) !important;
+}
